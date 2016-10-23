@@ -1,38 +1,49 @@
 h1 {
-      font-family: "Lucida Console", Monaco, monospace;
-            left: 0;
-	          width: 100%;
-		        text-align: center;
-			    }
+<<<<<<< HEAD
+	font-family: "Lucida Console", Monaco, monospace;
+	left: 0;
+=======
+        font-family: "Lucida Console", Monaco, monospace;
+        left: 0;
+>>>>>>> 129f8f2f700a5970d4995e6ac0e08f8fa4c937e9
+	width: 100%;
+	text-align: center;
+}
 
-			        textarea {
-				      resize: none;
-				            display: block;
-					          margin-left: auto;
-						        margin-right: auto;
-							    }
+textarea {
+	resize: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 
-							        img {
-								      width: 250px;
-								            height: 200px;
-									          display: block;
-										      }
+img {
+	width: 250px;
+	height: 200px;
+	display: block;
+}
 
-										          img:hover {
-											        opacity: 0.4;
-												    }
+img:hover {
+	opacity: 0.4;
+}
 
-												        .flavor{
-													      background: #bbaaee;
-													            color: white;
-														          margin-top: 30px;
-															        width: 10%;
-																      height: 5%;
-																          }
+.flavor{
+	background: #bbaaee;
+	color: white;
+	margin-top: 30px;
+	width: 10%;
+	height: 5%;
+}
 
-																	      .counter{
-																	            background: #00868b;
-																		          color: white;
-																			        width: 10%;
-																				      height: 5%;
-																				          }
+.counter{
+	background: #00868b;
+	color: white;
+	width: 10%;
+	height: 5%;
+}
+
+.error{
+	color: red;
+	font-family: verdana;
+	font-size: 10px;
+}
