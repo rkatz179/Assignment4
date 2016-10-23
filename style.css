@@ -36,3 +36,9 @@ h1 {
 																			        width: 10%;
 																				      height: 5%;
 																				          }
+
+.error{
+	color: red;
+	font-family: verdana;
+	font-size: 10px;
+}
