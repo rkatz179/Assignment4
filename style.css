@@ -1,6 +1,11 @@
 h1 {
+<<<<<<< HEAD
 	font-family: "Lucida Console", Monaco, monospace;
 	left: 0;
+=======
+        font-family: "Lucida Console", Monaco, monospace;
+        left: 0;
+>>>>>>> 129f8f2f700a5970d4995e6ac0e08f8fa4c937e9
 	width: 100%;
 	text-align: center;
 }
