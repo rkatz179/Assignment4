@@ -45,6 +45,7 @@ public class Assignment4Servlet extends HttpServlet {
   	out.println("<textarea name=\"Argument\" placeholder=\"Argument/Evidence:\" rows=\"10\" cols=\"50\">");
   	out.println("</textarea></br></br>");
   	out.println("<input type=\"submit\" name=\"Submit\" value=\"Submit\" style=\"display: block; margin-left: auto; margin-right: auto;\">");
+	if(argumentField != null){out.println("<h2>Argument: " + argumentField + "</h2>");}
 	out.println("</form><br/>");
 	out.println("<center>");
 	out.println("<table cellpadding=5 cellspacing=2 >");
@@ -72,20 +73,18 @@ public class Assignment4Servlet extends HttpServlet {
 	out.println("</HTML>");
     }
 
-     public void doPost(HttpServletRequest request,
+    public void doPost(HttpServletRequest request,
 		      HttpServletResponse response)
 	throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		submitBtn = request.getParameter("Submit");
-		argumentField = request.getParameter("Argument");
+		System.out.println("The value of the submitBtn parameter is " + submitBtn);
 		PrintWriter writer = response.getWriter();
 
 		if (submitBtn.equals("Submit")){
 			if (argumentField.length()!=0){
-				String htmlResponse = "<html>";
-				htmlResponse += "<h2>Argument: " + argumentField + "</h2>";
-				htmlResponse += "</html>";
-				writer.println(htmlResponse);
+				argumentField = request.getParameter("Argument");
+				System.out.println("The value of the argumentField parameter is " + argumentField);
 			}
 		}
 		doGet(request, response);
