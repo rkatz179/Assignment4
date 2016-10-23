@@ -23,7 +23,7 @@ public class Assignment4Servlet extends HttpServlet {
     public void doGet(HttpServletRequest request,
 		      HttpServletResponse response)
 	throws ServletException, IOException {
-	response.setContentType("text/html");
+
 	PrintWriter out = response.getWriter();
 	out.println("<HTML>");
 	out.println("<HEAD>");
@@ -45,12 +45,14 @@ public class Assignment4Servlet extends HttpServlet {
   	out.println("<textarea name=\"Argument\" placeholder=\"Argument/Evidence:\" rows=\"10\" cols=\"50\">");
   	out.println("</textarea></br></br>");
   	out.println("<input type=\"submit\" name=\"Submit\" value=\"Submit\" style=\"display: block; margin-left: auto; margin-right: auto;\">");
-	if(argumentField != null){out.println("<h2>Argument: " + argumentField + "</h2>");}
 	out.println("</form><br/>");
 	out.println("<center>");
 	out.println("<table cellpadding=5 cellspacing=2 >");
 	out.println("<tr>");
-	out.println("<td>Vote here: <input type=\"submit\" value=\"Convinced\"> <input type=\"submit\" value=\"Disagree\"><input type=\"submit\" value=\"Unsure\"></td>");
+	out.println("<td>Vote here:</td>");
+	out.println("<td><button>Convinced</button></td>  ");
+	out.println("<td><button>Disagree</button></td>");
+	out.println("<td><button>Unsure</button></td> ");
 	out.println("</tr>");
 	out.println("</table>");
 	out.println("</center>");
@@ -58,33 +60,35 @@ public class Assignment4Servlet extends HttpServlet {
 	out.println("<form name=\"choice\">");
 	out.println("<h2>Choose your favorite ice cream flavor</h5>");
 	out.println("<img src=\"https://media1.giphy.com/media/bDcs1vQmKdsqc/200_s.gif\">");
-	out.println("<input type=\"submit\" class=\"flavor\" value=\"Vanilla\">");
-	out.println("<input type=\"submit\" class=\"flavor\" value=\"Chocolate\">");
-	out.println("<input type=\"submit\" class=\"flavor\" value=\"Strawberry\">");
+	out.println("<button class=\"flavor\" onclick=\"flavor('vanilla')\">Vanilla</button>");
+	out.println("<button class=\"flavor\" onclick=\"flavor('chocolate')\">Chocolate</button>");
+	out.println("<button class=\"flavor\" onclick=\"flavor('strawberry')\">Strawberry</button>");
 	out.println("</form>");
 	out.println("</center>");
 	out.println("<center>");
 	out.println("<h2>Click the buttons</h5>");
-	out.println("<input type=\"submit\" class=\"counter\" value=\"Click Me\">");
-	out.println("<input type=\"submit\" class=\"counter\" value=\"Reset\">");
+	out.println("<button class=\"counter\" onclick=\"clicked()\">Click Me</button>");
+	out.println("<button class=\"counter\" onclick=\"reset()\">Reset</button>");
 	out.println("<p>The button has been clicked <p id='number'>0</p> times</p>");
 	out.println("</center>");
 	out.println("</BODY>");
 	out.println("</HTML>");
     }
 
-    public void doPost(HttpServletRequest request,
+     public void doPost(HttpServletRequest request,
 		      HttpServletResponse response)
 	throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		submitBtn = request.getParameter("Submit");
-		System.out.println("The value of the submitBtn parameter is " + submitBtn);
+		argumentField = request.getParameter("Argument");
 		PrintWriter writer = response.getWriter();
 
 		if (submitBtn.equals("Submit")){
 			if (argumentField.length()!=0){
-				argumentField = request.getParameter("Argument");
-				System.out.println("The value of the argumentField parameter is " + argumentField);
+				String htmlResponse = "<html>";
+				htmlResponse += "<h2>Argument: " + argumentField + "</h2>";
+				htmlResponse += "</html>";
+				writer.println(htmlResponse);
 			}
 		}
 		doGet(request, response);
