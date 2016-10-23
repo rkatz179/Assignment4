@@ -60,7 +60,7 @@ public class Assignment4Servlet extends HttpServlet {
 	out.println("<form name=\"choice\">");
 	out.println("<h2>Choose your favorite ice cream flavor</h5>");
 	out.println("<img src=\"https://media1.giphy.com/media/bDcs1vQmKdsqc/200_s.gif\">");
-	out.println("<button class=\"flavor\" onclick=\"flavor('vanilla')\">Vanilla</button>");
+	out.println("<input type=\"submit\" class=\"flavor\" value=\"Vanilla\">");
 	out.println("<button class=\"flavor\" onclick=\"flavor('chocolate')\">Chocolate</button>");
 	out.println("<button class=\"flavor\" onclick=\"flavor('strawberry')\">Strawberry</button>");
 	out.println("</form>");
