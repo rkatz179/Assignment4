@@ -49,7 +49,7 @@ public class Assignment4Servlet extends HttpServlet {
 	out.println("<center>");
 	out.println("<table cellpadding=5 cellspacing=2 >");
 	out.println("<tr>");
-	out.println("<td>Vote here:</td> <input type=\"submit\" value=\"Convinced\"> <input type=\"submit\" value=\"Disagree\"><input type=\"submit\" value=\"Unsure\">");
+	out.println("<td>Vote here: <input type=\"submit\" value=\"Convinced\"> <input type=\"submit\" value=\"Disagree\"><input type=\"submit\" value=\"Unsure\"></td>");
 	out.println("</tr>");
 	out.println("</table>");
 	out.println("</center>");
